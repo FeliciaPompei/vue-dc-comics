@@ -26,27 +26,27 @@ export default {
       dcStore : [
         {
           text: 'digital comics',
-          image: '../../assets/img/buy-comics-digital-comics.png',
+          image: './img/buy-comics-digital-comics.png',
           link : '#'
         },
         {
           text: 'dc merchamdise',
-          image: '../assets/img/buy-comics-merchandise.png',
+          image: './img/buy-comics-merchandise.png',
           link : '#'
         },
         {
           text: 'subscription',
-          image: '../assets/img/buy-comics-subscriptions.png',
+          image: './img/buy-comics-subscriptions.png',
           link : '#'
         },
         {
           text: 'comic shop locator',
-          image: '../assets/img/buy-comics-shop-locator.png',
+          image: './img/buy-comics-shop-locator.png',
           link : '#'
         },
         {
           text: 'dc power visa',
-          image: '../assets/img/buy-dc-power-visa.svg',
+          image: './img/buy-dc-power-visa.svg',
           link : '#'
         }
       ],
@@ -57,7 +57,7 @@ export default {
 
 
 <style scoped lang="scss">
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -82,27 +82,32 @@ export default {
 .nav-wrapper{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   height: 20vh;
   width: 70%;
   margin: 0 auto;
+
+  ul{
+    display:flex;
+    justify-content: center;
+    width:100%;
+
     li{
     list-style: none;
     display: inline;
-    margin:1rem;
 
-  img{
-    width:5%;
-    vertical-align: middle;
-    margin-right: 0.4rem;
-    
-  }
+      img{
+        width:20%;
+        vertical-align: middle;
+        margin-right: 0.2rem;
+        
+      }
 
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color:white;
-      font-size: 0.5rem;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color:white;
+        font-size: 0.5rem;
+      }
     }
   }
 }

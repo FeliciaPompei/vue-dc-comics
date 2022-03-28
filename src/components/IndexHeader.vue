@@ -85,7 +85,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items:center;
-  height: 20vh;
+  height: 10vh;
   width: 70%;
   margin: 0 auto;
 
