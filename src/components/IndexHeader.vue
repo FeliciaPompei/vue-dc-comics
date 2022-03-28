@@ -3,35 +3,8 @@
     <div id="header-wrapper">
       <img src="../assets/img/dc-logo.png" alt="DC logo">
       <ul>
-        <li>
-          <a href="#">characters</a>
-        </li>
-        <li>
-          <a href="#">comics</a>
-        </li>
-        <li>
-          <a href="#">movies</a>
-        </li>
-        <li>
-          <a href="#">tv</a>
-        </li>
-        <li>
-          <a href="#">games</a>
-        </li>
-        <li>
-          <a href="#">collectibles</a>
-        </li>
-        <li>
-          <a href="#">videos</a>
-        </li>
-        <li>
-          <a href="#">fans</a>
-        </li>
-        <li>
-          <a href="#">news</a>
-        </li>
-        <li>
-          <a href="#">shop</a>
+        <li v-for="(link,index) in headerLinks" :key="index" :class="(headerLinks.active) ? 'active' : ''">
+          <a :href="link.link"> {{link.text}} </a>
         </li>
       </ul>
     </div>
@@ -41,6 +14,62 @@
 <script>
 export default {
   name: 'IndexHeader',
+  data(){
+    return{
+      headerLinks : [
+        {
+          text: 'characters',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'comics',
+          link: '#',
+          active: true,
+        },
+        {
+          text: 'movies',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'tv',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'games',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'collectibles',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'videos',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'fans',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'news',
+          link: '#',
+          active: false,
+        },
+        {
+          text: 'shop',
+          link: '#',
+          active: false,
+        },
+      ],
+    }
+  },
 }
 </script>
 
@@ -67,7 +96,7 @@ export default {
   li{
     list-style: none;
     display: inline;
-    padding: 1rem;
+    padding: 0.4rem;
     font-size: 0.7rem;
 
 
@@ -75,6 +104,12 @@ export default {
       text-decoration: none;
       text-transform: uppercase;
       color:black;
+    }
+
+    &:active,
+    .active {
+      color:#0282f9;
+      border-bottom: 3px solid #0282f9;
     }
   }
 }

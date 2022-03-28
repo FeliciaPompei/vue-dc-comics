@@ -2,30 +2,14 @@
   <div>
     <div class="bg-gray">
       <div class="main-content">
-        <h1> Content goes here </h1>
+        <h3> Content goes here </h3>
     </div>
     <div class="bg-blue">
-      <div class="main-content">
+      <div class="nav-wrapper">
         <ul>
-          <li>
-            <img src="../assets/img/buy-comics-digital-comics.png" alt="DC digital comics">
-            <a href="#">digital comics</a>
-          </li>
-          <li>
-            <img src="../assets/img/buy-comics-merchandise.png" alt="DC merchandise">
-            <a href="#">dc merchamdise</a>
-          </li>
-          <li>
-            <img src="../assets/img/buy-comics-subscriptions.png" alt="DC subscriptions">
-            <a href="#">subscription</a>
-          </li>
-          <li>
-            <img src="../assets/img/buy-comics-shop-locator.png" alt="DC digital shop locator">
-            <a href="#">comic shop locator</a>
-          </li>
-          <li>
-            <img src="../assets/img/buy-dc-power-visa.svg" alt="DC power visa">
-            <a href="#">dc power visa</a>
+          <li v-for="(link, index) in dcStore" :key="index">
+            <img :src="link.image" :alt="link.text">
+            <a :href="link.link"> {{link.text}} </a>
           </li>
         </ul>
     </div>
@@ -37,6 +21,37 @@
 <script>
 export default {
   name: 'IndexMain',
+  data(){
+    return {
+      dcStore : [
+        {
+          text: 'digital comics',
+          image: '../../assets/img/buy-comics-digital-comics.png',
+          link : '#'
+        },
+        {
+          text: 'dc merchamdise',
+          image: '../assets/img/buy-comics-merchandise.png',
+          link : '#'
+        },
+        {
+          text: 'subscription',
+          image: '../assets/img/buy-comics-subscriptions.png',
+          link : '#'
+        },
+        {
+          text: 'comic shop locator',
+          image: '../assets/img/buy-comics-shop-locator.png',
+          link : '#'
+        },
+        {
+          text: 'dc power visa',
+          image: '../assets/img/buy-dc-power-visa.svg',
+          link : '#'
+        }
+      ],
+    }
+  }
 }
 </script>
 
@@ -54,17 +69,24 @@ export default {
 
 .main-content{
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   height: 20vh;
   width: 70%;
   margin: 0 auto;
 
-  h1 {
+  h3 {
     color:white;
   }
+}
 
-  li{
+.nav-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+  width: 70%;
+  margin: 0 auto;
+    li{
     list-style: none;
     display: inline;
     margin:1rem;

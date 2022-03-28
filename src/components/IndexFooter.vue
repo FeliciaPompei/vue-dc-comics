@@ -88,7 +88,7 @@ export default {
     }
   }
   img {
-    height:150%;
+    // height:150%;
   }
 }
 
