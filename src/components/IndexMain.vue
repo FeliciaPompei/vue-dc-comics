@@ -54,6 +54,7 @@ export default {
 
 .main-content{
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   height: 20vh;
   width: 70%;
