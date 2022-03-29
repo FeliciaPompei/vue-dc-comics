@@ -2,7 +2,7 @@
   <div>
     <div class="bg-gray">
       <JumbotronIndex />
-      <div class="main-content">
+      <div class="main-content my-flex my-container">
         <ComicCard
         v-for="(card, index) in dcCards" 
         :key="index"
@@ -13,14 +13,7 @@
       </div>
     </div>
     <div class="bg-blue">
-      <div class="nav-wrapper">
-        <ul>
-          <li v-for="(link, index) in dcStore" :key="index">
-            <img :src="link.image" :alt="link.text">
-            <a :href="link.link"> {{link.text}} </a>
-          </li>
-        </ul>
-      </div>
+      <ShoppingNav/>
     </div>
   </div>
 </template>
@@ -28,11 +21,14 @@
 <script>
 import ComicCard from './ComicCard.vue'
 import JumbotronIndex from './JumbotronIndex.vue'
+import ShoppingNav from './ShoppingNav.vue'
+
 export default {
   name: 'IndexMain',
   components: {
     ComicCard,
     JumbotronIndex,
+    ShoppingNav
   },
   data(){
     return {
@@ -144,59 +140,19 @@ export default {
 
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "../assets/scss/style.scss";
 
 .bg-gray{
-  background-color:#1c1c1c;
+  background-color: $darkGray;
 }
 
 .main-content{
-  display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.nav-wrapper{
-  display: flex;
-  align-items: center;
-  height: 20vh;
-  width: 70%;
-  margin: 0 auto;
-
-  ul{
-    display:flex;
-    justify-content: center;
-    width:100%;
-
-    li{
-    list-style: none;
-    display: inline;
-
-      img{
-        width:20%;
-        vertical-align: middle;
-        margin-right: 0.2rem;
-        
-      }
-
-      a {
-        text-decoration: none;
-        text-transform: uppercase;
-        color:white;
-        font-size: 0.5rem;
-      }
-    }
-  }
 }
 
 .bg-blue{
-  background-color:#0282f9;
+  background-color:$primaryColor;
 }
 
 </style>

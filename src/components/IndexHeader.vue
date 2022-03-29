@@ -1,9 +1,9 @@
 <template>
   <div id="main-header">
-    <div id="header-wrapper">
-      <img src="../assets/img/dc-logo.png" alt="DC logo">
-      <ul>
-        <li v-for="(link,index) in headerLinks" :key="index" :class="(headerLinks.active) ? 'active' : ''">
+    <div id="header-wrapper" class="my-flex my-container">
+      <img class="my-height-100" src="../assets/img/dc-logo.png" alt="DC logo">
+      <ul class="my-flex my-height-100">
+        <li class="my-height-100" v-for="(link,index) in headerLinks" :key="index" :class="{active: link.active}" @click="activeLink(index)">
           <a :href="link.link"> {{link.text}} </a>
         </li>
       </ul>
@@ -70,49 +70,52 @@ export default {
       ],
     }
   },
+  methods : {
+    activeLink(baseIndex){
+      this.headerLinks.forEach((element, index) => {
+          if (baseIndex === index ){
+              element.active = true;
+          } else {
+              element.active = false;
+          }
+      });
+    }
+  }
 }
 </script>
 
 
 <style scoped lang="scss">
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "../assets/scss/style.scss";
 
 #header-wrapper{
-  display: flex;
   justify-content: space-between;
   align-items:center;
   height: 10vh;
-  width: 70%;
-  margin: 0 auto;
 
   img{
-    height:55%;
+    padding: 0.5rem;
   }
 
-  li{
-    list-style: none;
-    display: inline;
-    padding: 0.4rem;
-    font-size: 0.7rem;
+  ul{
+    align-items: center;
 
+    li{
+        padding: 0.4rem;
+        font-size: 0.8rem;
+        line-height:9vh;
+        
+      a{
+        text-transform: uppercase;
+        color: $blackColor;
+      }
 
-    a{
-      text-decoration: none;
-      text-transform: uppercase;
-      color:black;
-    }
-
-    &:active,
-    .active {
-      color:#0282f9;
-      border-bottom: 3px solid #0282f9;
+      &:active,
+      .active {
+        border-bottom: 5px solid $primaryColor;
+      }
     }
   }
+  
 }
-
-
 </style>
