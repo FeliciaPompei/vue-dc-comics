@@ -3,12 +3,13 @@
     <div class="bg-gray">
       <JumbotronIndex />
       <div class="main-content my-flex my-container">
+        <a class="btn btn-position" href="#">current series</a>
         <ComicCard
         v-for="(card, index) in dcCards" 
         :key="index"
         :comicCard ="card"
         />
-        <button>Load More</button>
+        <a class="btn">Load More</a>
       
       </div>
     </div>
@@ -149,10 +150,31 @@ export default {
 .main-content{
   flex-wrap: wrap;
   align-items: center;
+  padding: 2rem;
+  justify-content: center;
+  position:relative;
 }
 
 .bg-blue{
   background-color:$primaryColor;
+}
+
+.btn {
+  background-color: $primaryColor;
+  padding: 0.5rem 3rem;
+  color:white;
+  text-align:center;
+  text-transform: uppercase;
+  font-size:0.8rem;
+}
+
+.btn-position{
+  position:absolute;
+  top:-15px;
+  left: 15px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+
 }
 
 </style>

@@ -5,19 +5,17 @@
 
 <script>
 export default {
-  name: 'ComicCard',
-  props: ['comicCard']
+  name: 'JumbotronIndex',
 }
 </script>
 
 
 <style scoped lang="scss">
-
+@import "../assets/scss/style.scss";
 #my-jumbotron{
   height:35vh;
   width:100%;
   background-image: url(../assets/img/jumbotron.jpg);
   background-size:cover;
 }
-
 </style>

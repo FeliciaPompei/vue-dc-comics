@@ -1,10 +1,13 @@
 <template>
-    <div class="my-card">
-      <img :src="comicCard.thumb" alt="">
+    <div class="my-card my-flex">
+      <div class="my-card-img">
+        <img :src="comicCard.thumb" alt="">
+      </div>
       <div>
         <h4> {{comicCard.series}} </h4>
         <p> {{comicCard.price}} </p>
       </div>
+    
     </div>
 </template>
 
@@ -18,19 +21,24 @@ export default {
 
 <style scoped lang="scss">
 
-  .my-card{
-    width: calc(80% / 6);
-    background-color: white;
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    align-items: center;;
-    padding:0.5rem;
-    align-content: center;
-    margin: 0.5rem;
-    font-size: 0.8rem;
+.my-card{
+  width:140px;
+  height:180px;
+  flex-wrap: wrap;
+  margin: 0.2rem 0.2rem 2rem;
+
+  h4, p{
+    text-align:left;
+    color:white;
+  }
+}
+  .my-card-img{
+    width: 120px;
+    height:120px;
+
     img{
-      width:50%;
+      width:100%;
+      height:100%;
     }
   }
 
