@@ -1,7 +1,7 @@
 <template>
     <div class="my-card my-flex">
       <div class="my-card-img">
-        <img :src="comicCard.thumb" alt="">
+        <img :src="comicCard.thumb" :alt="comicCard.series">
       </div>
       <div>
         <h4> {{comicCard.series}} </h4>
@@ -20,6 +20,7 @@ export default {
 
 
 <style scoped lang="scss">
+@import "../assets/scss/style.scss";
 
 .my-card{
   width:140px;
@@ -39,6 +40,7 @@ export default {
     img{
       width:100%;
       height:100%;
+      margin-bottom:0.5rem;
     }
   }
 

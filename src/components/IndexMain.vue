@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="bg-blue">
-      <ShoppingNav/>
+
     </div>
   </div>
 </template>
@@ -22,14 +22,12 @@
 <script>
 import ComicCard from './ComicCard.vue'
 import JumbotronIndex from './JumbotronIndex.vue'
-import ShoppingNav from './ShoppingNav.vue'
 
 export default {
   name: 'IndexMain',
   components: {
     ComicCard,
     JumbotronIndex,
-    ShoppingNav
   },
   data(){
     return {
@@ -157,6 +155,20 @@ export default {
 
 .bg-blue{
   background-color:$primaryColor;
+  li{
+  img{
+    width:20%;
+    vertical-align: middle;
+    margin-right: 0.2rem;
+    
+  }
+
+  a {
+    text-transform: uppercase;
+    color:white;
+    font-size: 0.5rem;
+  }
+}
 }
 
 .btn {
@@ -174,7 +186,6 @@ export default {
   left: 15px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-
 }
 
 </style>

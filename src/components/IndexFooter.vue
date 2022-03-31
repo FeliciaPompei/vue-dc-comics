@@ -216,7 +216,7 @@ export default {
   .footer-nav-bar{
     display:flex;
     flex-wrap: wrap;
-    width:30%;
+    width:40%;
 
     ul{
       margin: 0.8rem;
